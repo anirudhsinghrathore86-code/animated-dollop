@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jagdish Sweets & Colddrinks | Premium Halwai</title>
+    <title>Jagdish Sweets & Colddrinks | Premium Halwai Tradition</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
@@ -16,7 +17,7 @@
             --gold: #D4AF37;
             --cream: #FFFDF5;
             --dark: #0f0f0f;
-            --section-padding: 100px;
+            --section-padding: 80px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
@@ -26,12 +27,12 @@
             background-color: var(--cream);
             color: #2d2d2d;
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        /* --- Premium Hero Section --- */
+        /* --- Hero Section --- */
         .hero {
             height: 100vh;
-            /* UPDATED: Main Shop Front as Hero Background */
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
                         url('IMG_20260421_205146.jpg') no-repeat center center/cover;
             display: flex;
@@ -45,97 +46,40 @@
 
         .hero h1 {
             font-family: 'Rozha One', serif;
-            font-size: clamp(3rem, 10vw, 6rem);
+            font-size: clamp(3.5rem, 12vw, 7rem);
             color: var(--gold);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
             text-shadow: 2px 4px 15px rgba(0,0,0,0.6);
+            margin-bottom: 0;
         }
 
         .hero p {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.5rem;
-            max-width: 600px;
+            font-size: clamp(1rem, 4vw, 1.8rem);
             text-shadow: 1px 2px 8px rgba(0,0,0,0.8);
         }
 
-        .scroll-indicator {
-            position: absolute;
+        /* --- Floating WhatsApp --- */
+        .whatsapp-btn {
+            position: fixed;
             bottom: 30px;
-            animation: bounce 2s infinite;
-            font-size: 2rem;
-            color: var(--gold);
-        }
-
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
-
-        /* --- Legacy Section --- */
-        .legacy-section {
-            padding: var(--section-padding) 10%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            background: white;
-        }
-
-        .legacy-text h2 {
-            font-family: 'Rozha One', serif;
-            font-size: 3rem;
-            color: var(--deep-red);
-            margin-bottom: 20px;
-        }
-
-        .legacy-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 30px 30px 0px var(--gold);
-        }
-
-        /* --- Featured Menu Section --- */
-        .featured-menu {
-            padding: var(--section-padding) 5%;
-            background-color: var(--cream);
-            text-align: center;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .menu-item {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            transition: 0.4s;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .menu-item:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-
-        .menu-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; }
-
-        /* --- Cinematic Gallery Section --- */
-        .gallery-container {
-            background: var(--dark);
-            padding: var(--section-padding) 0;
+            left: 30px;
+            background: #25d366;
             color: white;
-            text-align: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: 0.3s;
         }
+        .whatsapp-btn:hover { transform: scale(1.05); background: #128c7e; }
 
-        .swiper { width: 100%; padding: 80px 0; }
-        .swiper-slide { width: 320px; height: 450px; border-radius: 20px; overflow: hidden; border: 1px solid var(--gold); }
-        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* --- Map & Contact --- */
-        .contact-section { padding: var(--section-padding) 10%; background: white; }
-        .map-frame { width: 100%; height: 450px; border-radius: 20px; border: none; box-shadow: 0 10px 50px rgba(0,0,0,0.1); }
-
-        /* --- Floating Social Bar --- */
+        /* --- Social Bar --- */
         .social-bar {
             position: fixed;
             right: 20px;
@@ -146,33 +90,94 @@
             gap: 15px;
             z-index: 1000;
         }
-
         .social-bar a {
-            width: 50px;
-            height: 50px;
+            width: 45px; height: 45px;
             background: var(--deep-red);
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            font-size: 1.2rem;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+        .social-bar a:hover { background: var(--gold); transform: translateX(-5px); }
 
-        .social-bar a:hover { background: var(--saffron); transform: scale(1.1); }
+        /* --- Stats/Heritage Section --- */
+        .stats-strip {
+            background: var(--deep-red);
+            color: var(--gold);
+            padding: 40px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            text-align: center;
+            gap: 20px;
+        }
+        .stat-card h3 { font-family: 'Rozha One'; font-size: 2.5rem; margin-bottom: 5px; }
+        .stat-card p { color: white; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
 
-        footer { background: #000; color: #666; padding: 50px 20px; text-align: center; }
+        /* --- Legacy Section --- */
+        .legacy-section {
+            padding: var(--section-padding) 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: white;
+        }
+        .legacy-text h2 { font-family: 'Rozha One', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--deep-red); margin-bottom: 25px; }
+        .legacy-image img { width: 100%; border-radius: 20px; box-shadow: 25px 25px 0px var(--gold); }
+
+        /* --- Menu Section --- */
+        .featured-menu { padding: var(--section-padding) 5%; text-align: center; }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .menu-item {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            transition: 0.4s;
+            border-bottom: 5px solid var(--gold);
+        }
+        .menu-item:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
+        .menu-item img { width: 100%; height: 280px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; }
+
+        /* --- Testimonials --- */
+        .testimonials { padding: var(--section-padding) 10%; background: #fdf2e9; text-align: center; }
+        .testimonial-card {
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+        }
+        .stars { color: var(--gold); margin-bottom: 15px; }
+
+        /* --- Gallery & Map --- */
+        .gallery-container { background: var(--dark); padding: var(--section-padding) 0; color: white; text-align: center; }
+        .swiper-slide { width: 300px; height: 400px; border-radius: 15px; overflow: hidden; }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+        .map-frame { width: 100%; height: 450px; border-radius: 20px; border: none; margin-top: 40px; }
+
+        footer { background: #000; color: #888; padding: 60px 20px; text-align: center; }
 
         @media (max-width: 768px) {
-            .legacy-section { grid-template-columns: 1fr; text-align: center; padding: 60px 5%; }
+            .legacy-section { grid-template-columns: 1fr; text-align: center; }
             .legacy-image { order: -1; }
             .social-bar { bottom: 20px; top: auto; right: 20px; flex-direction: row; transform: none; }
+            .whatsapp-btn span { display: none; }
+            .whatsapp-btn { padding: 12px; border-radius: 50%; }
         }
     </style>
 </head>
 <body>
+
+    <a href="https://wa.me/919414842777" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i> <span>Order via WhatsApp</span>
+    </a>
 
     <div class="social-bar">
         <a href="https://www.facebook.com/jagdish.sweets.98" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -181,45 +186,75 @@
     </div>
 
     <section class="hero">
-        <h1>Jagdish Sweets</h1>
-        <p>Crafting Pure Rajasthani Traditions Since Generations</p>
-        <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+        <h1 data-aos="zoom-out" data-aos-duration="1500">Jagdish Sweets</h1>
+        <p data-aos="fade-up" data-aos-delay="500">Purity in Every Grain, Tradition in Every Bite</p>
+    </section>
+
+    <section class="stats-strip">
+        <div class="stat-card" data-aos="fade-up">
+            <h3>40+</h3>
+            <p>Years of Legacy</p>
+        </div>
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>100%</h3>
+            <p>Pure Desi Ghee</p>
+        </div>
+        <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+            <h3>50+</h3>
+            <p>Sweet Varieties</p>
+        </div>
     </section>
 
     <section class="legacy-section">
-        <div class="legacy-text">
-            <h2>Our Legacy</h2>
-            <p>Located in the heart of Sheoganj, Jagdish Sweets & Colddrinks has been the cornerstone of celebration for families for decades. We specialize in authentic, pure vegetarian delicacies prepared with the finest ingredients and age-old recipes.</p>
-            <p style="margin-top: 20px;">Every bite is a journey through the rich culinary heritage of Rajasthan.</p>
+        <div class="legacy-text" data-aos="fade-right">
+            <h2>The Art of Rajasthani Halwai</h2>
+            <p>Established in the heart of Sheoganj, Jagdish Sweets & Colddrinks is more than a shop; it’s a landmark of taste. We believe that sweets are a symbol of joy, and we craft that joy using recipes passed down through generations.</p>
+            <p style="margin-top: 15px;">Every batch of our famous Lassi and Mithai is made with milk sourced directly from local farms, ensuring unmatched freshness.</p>
         </div>
-        <div class="legacy-image">
-            <img src="IMG_20260421_220929.jpg" alt="Authentic Sweets">
+        <div class="legacy-image" data-aos="fade-left">
+            <img src="IMG_20260421_220929.jpg" alt="Our Signature Display">
         </div>
     </section>
 
-    <section class="featured-menu">
-        <h2 style="font-family: 'Rozha One'; font-size: 3rem; color: var(--deep-red);">House Specialties</h2>
+    <section class="featured-menu" id="menu">
+        <h2 style="font-family: 'Rozha One'; font-size: 3rem; color: var(--deep-red);" data-aos="fade-down">Our Specialties</h2>
         <div class="menu-grid">
-            <div class="menu-item">
+            <div class="menu-item" data-aos="flip-left">
                 <img src="IMG_20260421_205211.jpg" alt="Sweets">
                 <h3>Traditional Mithai</h3>
-                <p>Pure Ghee preparations that melt in your mouth.</p>
+                <p>Signature Kaju Katli, Gulab Jamun, and Ghee Laddu.</p>
             </div>
-            <div class="menu-item">
-                <img src="IMG_20260421_220917.jpg" alt="Maharaja Lassi">
+            <div class="menu-item" data-aos="flip-left" data-aos-delay="200">
+                <img src="IMG_20260421_220917.jpg" alt="Lassi">
                 <h3>Maharaja Lassi</h3>
-                <p>Thick, creamy, and topped with the richness of malai.</p>
+                <p>The thickest, creamiest Malai Lassi in the region.</p>
             </div>
-            <div class="menu-item">
-                <img src="IMG_20260421_205435.jpg" alt="Namkeen & Snacks">
+            <div class="menu-item" data-aos="flip-left" data-aos-delay="400">
+                <img src="IMG_20260421_205435.jpg" alt="Namkeen">
                 <h3>Namkeen & Snacks</h3>
-                <p>Spicy, crunchy, and perfectly Rajasthani.</p>
+                <p>Crispy, spicy snacks perfect for your tea-time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div data-aos="fade-up">
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="swiper testSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide testimonial-card">
+                        "The purity of their sweets is unmatched. The Lassi is a meal in itself! Truly a 10/10 experience every time I visit Sheoganj."
+                        <p style="margin-top:15px; font-weight: 600; font-style: normal; color: var(--deep-red);">- Rajesh Sharma</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="gallery-container">
-        <h2 style="font-family: 'Rozha One'; font-size: 3rem; color: var(--gold);">Visual Indulgence</h2>
+        <h2 style="font-family: 'Rozha One'; font-size: 3rem; color: var(--gold); margin-bottom: 30px;">Gallery</h2>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="IMG_20260421_205528.jpg"></div>
@@ -227,35 +262,42 @@
                 <div class="swiper-slide"><img src="IMG_20260421_205237.jpg"></div>
                 <div class="swiper-slide"><img src="IMG_20260421_205448.jpg"></div>
             </div>
-            <div class="swiper-pagination"></div>
         </div>
     </section>
 
-    <section class="contact-section">
-        <h2 style="font-family: 'Rozha One'; font-size: 3rem; text-align: center; margin-bottom: 40px; color: var(--deep-red);">Visit Our Heritage Shop</h2>
-        <iframe 
-            class="map-frame"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.324264627254!2d73.0645648!3d24.9210214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3969e95f9f969695%3A0x4249a929ea2e1ed1!2sJagdish%20Sweets%20%26%20colddrinks!5e0!3m2!1sen!2sin!4v1713715000000!5m2!1sen!2sin" 
-            allowfullscreen="" loading="lazy"></iframe>
+    <section class="legacy-section" style="background: white;">
+        <div class="legacy-text" data-aos="fade-right">
+            <h2>Visit Our Shop</h2>
+            <p><strong>Address:</strong> Main Bazaar, Sheoganj, Rajasthan</p>
+            <p><strong>Hours:</strong> 7:00 AM - 10:00 PM</p>
+            <p><strong>Contact:</strong> +91 94148 42777</p>
+            <a href="tel:09414842777" style="display:inline-block; margin-top:20px; padding:10px 25px; background:var(--deep-red); color:white; text-decoration:none; border-radius:5px;">Call Now</a>
+        </div>
+        <div class="legacy-image" data-aos="fade-left">
+            <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.954641973685!2d73.0645!3d25.7725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDQ2JzIxLjAiTiA3M8KwMDMnNTIuMiJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </section>
 
     <footer>
-        <p>Jagdish Sweets & Colddrinks © 2026 | Sheoganj, Rajasthan</p>
-        <p style="margin-top: 10px; font-size: 0.8rem;">Authentic Halwai Tradition</p>
+        <p>Jagdish Sweets & Colddrinks © 2026 | Crafting Sweet Memories</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #555;">Design & Tradition Combined</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({ duration: 1000, once: true });
+
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,
             slidesPerView: "auto",
-            coverflowEffect: { rotate: 20, stretch: 0, depth: 200, modifier: 1, slideShadows: true },
+            coverflowEffect: { rotate: 30, stretch: 0, depth: 100, modifier: 1, slideShadows: true },
             loop: true,
-            autoplay: { delay: 3000 },
+            autoplay: { delay: 2500 },
         });
     </script>
 </body>
-                                                                                                        </html>
-                                                                                                        
+                    </html>
+            
