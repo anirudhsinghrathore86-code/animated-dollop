@@ -31,8 +31,9 @@
         /* --- Premium Hero Section --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('IMG_20260421_205237.jpg') no-repeat center center/cover;
+            /* Updated to use IMG_20260421_220917.jpg */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('IMG_20260421_220917.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -48,6 +49,7 @@
             color: var(--gold);
             margin-bottom: 10px;
             letter-spacing: 2px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
         }
 
         .hero p {
@@ -55,6 +57,7 @@
             font-style: italic;
             font-size: 1.5rem;
             max-width: 600px;
+            text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
         }
 
         .scroll-indicator {
@@ -67,7 +70,7 @@
 
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
 
-        /* --- Legacy Section (Adds Length) --- */
+        /* --- Legacy Section --- */
         .legacy-section {
             padding: var(--section-padding) 10%;
             display: grid;
@@ -203,7 +206,7 @@
                 <p>Pure Ghee preparations that melt in your mouth.</p>
             </div>
             <div class="menu-item">
-                <img src="IMG_20260421_205423.jpg" alt="Lassi">
+                <img src="IMG_20260421_220929.jpg" alt="Maharaja Lassi">
                 <h3>Maharaja Lassi</h3>
                 <p>Thick, creamy, and topped with the richness of malai.</p>
             </div>
@@ -222,7 +225,7 @@
                 <div class="swiper-slide"><img src="IMG_20260421_205435.jpg"></div>
                 <div class="swiper-slide"><img src="IMG_20260421_205528.jpg"></div>
                 <div class="swiper-slide"><img src="IMG_20260421_205549.jpg"></div>
-                <div class="swiper-slide"><img src="IMG_20260421_205237.jpg"></div>
+                <div class="swiper-slide"><img src="IMG_20260421_220917.jpg"></div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -254,4 +257,5 @@
         });
     </script>
 </body>
-</html>
+    </html>
+    
