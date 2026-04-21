@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagdish Sweets & Colddrinks | Sheoganj</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --saffron: #FF9933;
+            --deep-red: #8B0000;
+            --gold: #D4AF37;
+            --cream: #FFFDD0;
+            --dark: #2D2D2D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Traditional Border Motif */
+        header {
+            background: var(--deep-red);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background-image: radial-gradient(var(--gold) 2px, transparent 2px);
+            background-size: 10px 10px;
+        }
+
+        h1 {
+            font-family: 'Rozha One', serif;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating {
+            background: #2e7d32;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .badge {
+            background: var(--gold);
+            color: var(--deep-red);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--saffron);
+        }
+
+        .specialty {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                        url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            border: 2px dashed var(--gold);
+        }
+
+        h2 {
+            font-family: 'Rozha One', serif;
+            color: var(--deep-red);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+        }
+
+        .contact-link {
+            display: block;
+            color: var(--deep-red);
+            text-decoration: none;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            background: var(--deep-red);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .btn:hover {
+            background: var(--saffron);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+            margin-top: 3rem;
+        }
+
+        .veg-icon {
+            color: #2e7d32;
+            border: 2px solid #2e7d32;
+            padding: 2px;
+            font-size: 0.7rem;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Jagdish Sweets & Colddrinks</h1>
+    <p>Authentic Rajasthani Flavors Since Years</p>
+    <div>
+        <span class="rating">4.2 ★</span> 
+        <span style="color: var(--gold); margin-left: 10px;">(1.8K Reviews)</span>
+    </div>
+    <div style="margin-top: 15px;">
+        <span class="badge"><span class="veg-icon">●</span> 100% Veg-only</span>
+        <span class="badge">Candy Store & Desserts</span>
+    </div>
+</header>
+
+<div class="container">
+    <section class="specialty">
+        <h2>Our Famous Specialty</h2>
+        <h3 style="font-size: 2rem; color: var(--saffron);">Maharaja Lassi</h3>
+        <p>A royal treat served with love and traditional richness.</p>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <h2>Visit Us</h2>
+            <p><strong>Address:</strong><br>
+            Halwai bazar, Dargah Sangh IV Nagar,<br>
+            Sheoganj, Rajasthan 307027</p>
+            
+            <p style="margin-top: 1rem;"><strong>Timing:</strong><br>
+            <span style="color: #2e7d32; font-weight: bold;">Open Now</span> • Closes 10:30 PM</p>
+            
+            <div class="btn-group">
+                <a href="tel:09414842777" class="btn">Call Now</a>
+                <a href="#" class="btn">Directions</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Quick Contact</h2>
+            <p>Need a bulk order for a wedding or festival?</p>
+            <a href="tel:09414842777" class="contact-link">📞 094148 42777</a>
+            <a href="#" class="contact-link">💬 Send a Text Message</a>
+            
+            <div class="btn-group">
+                <a href="#" class="btn" style="background: var(--gold);">View Full Menu</a>
+                <a href="#" class="btn" style="background: #444;">Share Shop</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2024 Jagdish Sweets & Colddrinks - Sheoganj, Rajasthan</p>
+    <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 10px;">Pure Vegetarian Indian Sweet Shop</p>
+</footer>
+
+</body>
+  </html>
+  
